@@ -25,7 +25,7 @@ for(k in 1:ks){
 	d_trun=d_sort[c(1:50,451:500),]       ##Truncated by high 50 and low 50 of sorted X
 	pwr=pwr+sum(summary(lm(Y~Z, data=d_trun))$coefficients[2,4]<0.05)
 }
-pwr
+pwr/ks		##Type I error rate
 
 ## Some plot to see the distribution
 d_sort=d[order(d[,1]),]
